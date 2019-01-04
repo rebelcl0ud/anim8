@@ -1,0 +1,48 @@
+<style>
+	/*
+	transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay]
+	*/
+
+* {
+  box-sizing: border-box;
+}
+
+/* if child would not be within parent hover and placed in child element, bg would only change if over child itself, not parent as-is atm */
+
+.parent {
+  background: yellow;
+  padding: 50px;
+  width: 100%;
+  opacity: 1;
+  transition: background 1s ease-in-out 1s, width 1s ease-in-out, opacity 1s ease-in-out 2s;
+  &:hover {
+    background: red;
+    width: 50%;
+    opacity: 0;
+    .child {
+      background: blue;
+    }
+  }
+  .child {
+    background: black;
+    height: 300px;
+    transition: all 2s ease-in-out;
+  }
+}
+</style>
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <div class="parent">
+  	<div class="child"><div>
+	</div>
+</body>
+
+</html>
