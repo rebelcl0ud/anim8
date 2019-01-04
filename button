@@ -1,0 +1,40 @@
+<style>
+/*
+transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay]
+*/
+
+* {
+  box-sizing: border-box; 
+}
+
+button {
+  width: 50%;
+  padding: 25px 5px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  background: grey;
+  /* instead of using 'all' specify bg + color to save on memory */
+  transition: background 1s ease-in-out, color 1s ease-in-out;
+  
+  &:hover {
+    background: red;
+    color: white;
+  }
+}
+</style>
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <button>hey</button>
+</body>
+
+</html>
