@@ -1,0 +1,102 @@
+<style>
+/*
+transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay]
+*/
+
+* {
+  box-sizing: border-box; 
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+.menu {
+  background: black;
+  color: grey;
+  margin: 0;
+  padding: 0;
+  /* level 1 */
+  li {
+    display: inline-block;
+    list-style: none;
+    padding: 20px;
+    border: 1px solid black;
+    margin: 0;
+    position: relative;
+    /* if level 1 has ul inside */
+    ul.one {
+      background: pink;
+      display: block;
+      position: absolute;
+      top: 56px;
+      left: -110px;
+      width: 200px;
+      /* if level 1 nested ul contains li */
+      li {
+        display: block;
+      }
+    }
+  }
+  ul.two {
+    background: cyan;
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: -1px;
+    width: 200px;
+
+    li {
+      display: block;
+    }
+  }
+  ul.three {
+    background: skyblue;
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: -1px;
+    width: 200px;
+
+    li {
+      display: block;
+    }
+  }
+}
+</style>
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="menu">
+      <li>Items-1
+        <ul class="one">
+          <li>sub-1
+            <ul class="two">
+              <li>inner-sub-1
+                <ul class="three">
+                  <li>inner-inner-sub-1</li>
+                  <li>inner-inner-sub-2</li>
+                  <li>inner-inner-sub-3</li>
+                </ul>
+              </li>
+              <li>inner-sub-2</li>
+              <li>inner-sub-3</li>
+            </ul>
+          </li>
+          <li>sub-2</li>
+          <li>sub-3</li>
+        </ul>
+        
+      </li><li>Items-2</li><li>Items-3</li>
+    </ul>
+  </div>
+</body>
