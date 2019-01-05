@@ -1,0 +1,95 @@
+<style>
+/*
+transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay]
+*/
+
+* {
+  box-sizing: border-box; 
+}
+
+.parent {
+  text-align: center;
+  padding: 50px;
+}
+
+.button {
+  border: 1px solid black;
+  border-radius: 3px;
+  background: skyblue;
+  color: grey;
+  display: inline-block;
+  padding: 25px 35px;
+}
+
+.box {
+  background: pink;
+  width: 200px;
+  height: 200px;
+  transition: all 1s ease-in-out;
+  transform: translate3d(0,0,0);
+  
+  &.active {
+    background: cyan;
+    transform: translate3d(500px,0,0);
+  }
+}
+
+.one {
+  transform: translate3d(500px,0,0);
+}
+.two {
+  transform: translate3d(500px,500px,0);
+}
+.three {
+  transform: translate3d(0,500px,0);
+}
+</style>
+
+<script>
+	var statePos = 0;
+
+	$(document).on('click', '.button', function() {
+	  switch(statePos) {
+	    case 0:
+	      if($('.box').hasClass('three')) {
+	        $('.box').removeClass('three');
+	      }
+	      statePos = 1;
+	      break;
+	    case 1:
+	      $('.box').addClass('one');
+	      statePos = 2;
+	      break;
+	    case 2:
+	      $('.box').removeClass('one').addClass('two');
+	      statePos = 3;
+	      break;
+	    case 3:
+	      $('.box').removeClass('two').addClass('three');
+	      statePos = 0;
+	      break;      
+	  }
+	})
+</script>
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script
+	  src="https://code.jquery.com/jquery-3.3.1.slim.js"
+	  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+	  crossorigin="anonymous"> 
+	</script>
+</head>
+
+<body>
+  <div class="parent">
+  	<div class="button">click me</div>
+  	<div class="box"></div>
+	</div>
+</body>
+
+</html>
