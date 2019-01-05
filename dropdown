@@ -7,6 +7,14 @@ transition: [transition-property] [transition-duration] [transition-timing-funct
   box-sizing: border-box; 
 }
 
+/*
+transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay]
+*/
+
+// * {
+//   box-sizing: border-box; 
+// }
+
 .container {
   max-width: 400px;
   margin: 50px auto;
@@ -25,45 +33,84 @@ transition: [transition-property] [transition-duration] [transition-timing-funct
     border: 1px solid black;
     margin: 0;
     position: relative;
+    transition: all 1s ease-in-out;
+    &:hover {
+      & > ul.one {
+        // display: block;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
     /* if level 1 has ul inside */
     ul.one {
       background: pink;
-      display: block;
+      // display: block;
+      // display: none;
+      visibility: hidden;
       position: absolute;
       top: 56px;
       left: -110px;
       width: 200px;
+      opacity: 0;
+      transition: all 1s ease-in-out;
       /* if level 1 nested ul contains li */
       li {
         display: block;
+        
+        &:hover {
+          & > ul.two {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
       }
     }
   }
   ul.two {
     background: cyan;
-    display: block;
+    // display: block;
+    // display: none;
+    visibility: hidden;
     position: absolute;
     left: 100%;
     top: -1px;
     width: 200px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
 
     li {
       display: block;
+      
+      &:hover {
+        & > ul.three {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
     }
   }
   ul.three {
     background: skyblue;
-    display: block;
+    // display: block;
+    // display: none;
+    visibility: hidden;
     position: absolute;
     left: 100%;
     top: -1px;
     width: 200px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
 
     li {
       display: block;
     }
   }
 }
+
+/**
+  display: block/none won't transition/animate, 
+  swapped out for visibility
+*/
 </style>
 
 <!doctype html>
