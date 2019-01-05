@@ -1,0 +1,59 @@
+<style>
+/*
+
+animation: [animation-name] [animation-duration] [animation-timing-function] [animation-delay] [animation-iteration-count] [animation-direction] [animation-fill-mode] [animation-play-state]
+
+*/
+
+* {
+  box-sizing: border-box; 
+}
+
+@keyframes moveRight {
+  from {
+    transform: translate3d(0,0,0)
+  }
+  to {
+    transform: translate3d(500px,0,0);
+  }
+} 
+
+.parent {
+  text-align: center;
+  padding: 50px;
+}
+
+.button {
+  border: 1px solid black;
+  border-radius: 3px;
+  background: skyblue;
+  color: grey;
+  display: inline-block;
+  padding: 25px 35px;
+}
+
+.box {
+  background: pink;
+  width: 200px;
+  height: 200px;
+  animation: moveRight 1s ease-in-out 5 alternate forwards;
+}
+
+</style>
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <div class="parent">
+    <div class="button">click me</div>
+    <div class="box"></div>
+  </div>
+</body>
+
+</html>
